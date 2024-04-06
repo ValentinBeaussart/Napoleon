@@ -7,3 +7,20 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('navbar-scroll');
   }
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const fadeInElements = document.querySelectorAll('.fade-in-element');
+
+  const revealOnScroll = () => {
+    fadeInElements.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+      const isVisible = elementTop < window.innerHeight - 100; // Ajustez selon vos besoins
+
+      if (isVisible) {
+        element.classList.add('fade-in-visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+});
