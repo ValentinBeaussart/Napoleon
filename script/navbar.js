@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const revealOnScroll = () => {
     fadeInElements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
-      const isVisible = elementTop < window.innerHeight - 100; // Ajustez selon vos besoins
+      const isVisible = elementTop < window.innerHeight - 100;
 
       if (isVisible) {
         element.classList.add('fade-in-visible');
